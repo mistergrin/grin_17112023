@@ -1,4 +1,4 @@
-print('~' * 40)
+print('~.' * 40)
 
 name_user = input()
 age_user = int(input())
