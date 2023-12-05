@@ -28,7 +28,12 @@ students["Ivan Alekseev"] = {
 
 students["Іван Петров"].update({'bank_account_number': None})
 get_account = students.get('bank_account_number', 0.0)
+quantity_students = len(students)
 
-average_grade = (students["Іван Петров"]["Середній бал"] + students["Женя Курич"]["Середній бал"] + students["Маша Кера"]["Середній бал"] + students["Ivan Alekseev"]["Середній бал"]) / 4
+grades = 0
+for student in students.values():
+    grades += student["Середній бал"]
+
+average_grade = grades / quantity_students
 
 print(f"Середній бал студентів = {average_grade}, \nДані Івана Петрова про акаунт - {get_account}")
