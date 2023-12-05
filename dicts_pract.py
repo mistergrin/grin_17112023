@@ -7,7 +7,7 @@ data_from_net = response.json()
 carts = data_from_net["carts"]
 
 for items in carts:
-    product = items["products"]
-    for products in product:
-        if products['discountPercentage'] >= 15:
+    products = items["products"]
+    for product in products:
+        if product['discountPercentage'] >= 15:
             print(products["title"])
