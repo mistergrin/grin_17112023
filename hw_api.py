@@ -18,9 +18,9 @@ for data in people:
     income_difference = data["salary"] - data["credit_waste"]
     if income_difference < 0:
         quantity_poor_family += 1
-    if data["large_family"]:
+    if data["large_family"] is True:
         quantity_large_family += 1
-    if data["large_family"] and data["age"] > 35:
+    if data["large_family"] is True and data["age"] > 35:
         profit = data["salary"] - data["credit_waste"]
     if data["sex"] == "female" and data["accomodation"]:
         quantity_reach_women += 1
