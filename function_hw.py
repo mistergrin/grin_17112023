@@ -1,25 +1,29 @@
-def from_centimeters_to_inches():
-    centimetres = float(input("type your value(centimeters)"))
-    inches = centimetres / 2.54
-    return inches
+from decimal import Decimal
+
+FROM_INCHES_TO_CENTIMETERS = 2.54
 
 
-def get_list_of_paired_numbers():
-    list_paired_numbers = []
-    lists = input("enter list of numbers").split()
-    for numbers in lists:
-        if int(numbers) % 2 == 0:
-            list_paired_numbers.append(int(numbers))
-    return list_paired_numbers
+def convert_centimeters_to_inches(centimetres: int | float) -> Decimal:
+    inches = centimetres / FROM_INCHES_TO_CENTIMETERS
+    result = Decimal(str(inches)).quantize(Decimal('0.01'))
+    return result
 
 
-def is_bank_issue_loan():
-    sum_payments = float(input("enter your payments for 25 years"))
-    monthly_income = float(input("enter your income per month"))
-    monthly_payment = sum_payments / 300
+def get_list_of_paired_numbers(list_numbers: list[int]) -> list[int]:
+    for numbers in list_numbers:
+        if numbers % 2 != 0:
+            list_numbers.remove(numbers)
+    return list_numbers
+
+
+YEARS = 25
+
+
+def is_bank_issue_loan(sum_payments: float | int, monthly_income: int | float) -> bool:
+    monthly_payment = sum_payments / (YEARS * 12)
     percent_income = monthly_income * 0.35
     if percent_income > monthly_payment:
-        answer = "Yes, you can"
+        answer = True
     else:
-        answer = "No, you can't"
+        answer = False
     return answer
