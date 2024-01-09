@@ -21,5 +21,5 @@ def is_bank_issue_loan():
     if percent_income > monthly_payment:
         answer = "Yes, you can"
     else:
-        answer = "No, tou can't"
+        answer = "No, you can't"
     return answer
