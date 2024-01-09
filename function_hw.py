@@ -25,7 +25,7 @@ sum_payments = 120000000
 monthly_income = 55000
 
 
-def is_bank_issue_loan(sum_payments: float | int, monthly_income: int | float) -> bool:
+def is_bank_issue_loan() -> bool:
     monthly_payment = sum_payments / (YEARS * 12)
     percent_income = monthly_income * 0.35
     if percent_income > monthly_payment:
