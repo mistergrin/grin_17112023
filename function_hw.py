@@ -1,22 +1,28 @@
 from decimal import Decimal
 
 FROM_INCHES_TO_CENTIMETERS = 2.54
+centimetres = 12.7
 
 
-def convert_centimeters_to_inches(centimetres: int | float) -> Decimal:
+def convert_centimeters_to_inches() -> Decimal:
     inches = centimetres / FROM_INCHES_TO_CENTIMETERS
     result = Decimal(str(inches)).quantize(Decimal('0.01'))
     return result
 
 
-def get_list_of_paired_numbers(list_numbers: list[int]) -> list[int]:
-    for numbers in list_numbers:
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+def get_list_of_paired_numbers():
+    for numbers in list:
         if numbers % 2 != 0:
-            list_numbers.remove(numbers)
-    return list_numbers
+            list.remove(numbers)
+    return list
 
 
 YEARS = 25
+sum_payments = 120000000
+monthly_income = 55000
 
 
 def is_bank_issue_loan(sum_payments: float | int, monthly_income: int | float) -> bool:
