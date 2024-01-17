@@ -1,12 +1,13 @@
-from datetime import datetime
+import time
 
 
 def decorator(func):
     def wrapper(*args):
         with open('txt.file.txt', mode='a', encoding='utf-8') as file:
+            start_time_function = time.asctime()
             string = func(*args)
-            time = datetime.now()
-            file.write(f"{string}; time - {time}\n")
+            end_time_function = time.asctime()
+            file.write(f"function started at {start_time_function}, ended at {end_time_function}. Result - {string}\n")
     return wrapper
 
 
