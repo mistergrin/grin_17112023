@@ -18,9 +18,6 @@ def get_string(string):
 
 
 @decorator
-def get_number(number):
+def get_number_3(number):
     return number * 3
 
-
-get_string("some_string")
-get_number(34849932)
