@@ -8,7 +8,7 @@ def decorator(func):
             result = func(*args)
             end_time_function = time.asctime()
             file.write(f"function started at {start_time_function}, ended at {end_time_function}. Result - {result}\n")
-
+            return result
     return wrapper
 
 
