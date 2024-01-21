@@ -38,6 +38,3 @@ query_2 = {'author': "Vincent Van Gogh"}
 deleted = quotes.delete_many(query_2)
 
 quotes.drop()
-
-
-

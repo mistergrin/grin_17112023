@@ -5,5 +5,3 @@ load_dotenv()
 
 USER = os.getenv('USER') or ''
 PASSWORD = os.getenv('PASSWORD') or ''
-
-# print(PASSWORD)
